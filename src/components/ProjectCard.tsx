@@ -8,7 +8,6 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CodeIcon from '@mui/icons-material/Code';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box } from '@mui/material';
 import SimpleBackdrop from './SimpleBackdrop';
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -49,15 +48,6 @@ export default function ProjectCard(props: any) {
   return (
     <Card sx={{ width: 550, marginBottom: '30px', backgroundColor: 'rgb(255, 255, 255, .9)'}}>
         {props.subheader}
-      {/* <Box
-        component="img"
-        src={props.mainSrc}
-        sx={{
-            height: 'auto',
-            width: '30rem',
-            opacity: '1'
-        }}
-      /> */}
       <SimpleBackdrop image={props.mainSrc}/>
       <CardContent sx={{ opacity: 1 }}>
         <Typography variant="body2" sx={{ color: 'text.secondary',  opacity: 1 }}>
@@ -78,7 +68,6 @@ export default function ProjectCard(props: any) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            // transition: 'background-color 0.3s ease',
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>

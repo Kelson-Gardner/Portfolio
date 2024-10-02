@@ -34,16 +34,6 @@ const router = createHashRouter([
     path: "/consultation",
     element: <App page="experience" contents={<Consultation />} />
   }
-  // TODO: create the study guides page
-  // {
-  //   path: "studyGuides",
-  //   element: <App page="study guides" contents={<StudyGuides />}/>
-  // }
-  // TODO: create the practice tests page
-  // {
-  //   path: "practiceTests",
-  //   element: <App page="practice tests" contents={<PracticeTests />}/>
-  // }
 ])
 
 createRoot(document.getElementById('root')!).render(

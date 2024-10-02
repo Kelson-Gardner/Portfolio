@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import Logo from "../assets/Utah-State-Aggies-logo.png"
+import Logo from "../assets/Utah-State-Aggies-logo.png";
 
 function SecondPhotoTransition(){
     const [isVisible, setIsVisible] = useState(false);
@@ -8,9 +8,8 @@ function SecondPhotoTransition(){
     useEffect(() => {
       const handleScroll = () => {
         const topPosition = window.scrollY;
-        console.log(topPosition);
-        setIsVisible(topPosition >= 25 && topPosition <600);
-      }
+        setIsVisible(topPosition >= 25 && topPosition < 600);
+      };
 
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
@@ -25,12 +24,14 @@ function SecondPhotoTransition(){
           alt="Transitioning Image"
           sx={{
             position: 'absolute',
-            right: isVisible ? '100px' : '-100px',
+            right: 0,
+            transform: isVisible ? 'translateX(-100px)' : 'translateX(100px)', // Slide in from the right
             opacity: isVisible ? 1 : 0,
-            transition: 'all 0.5s ease-in-out',
+            transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out',
             width: '400px',
             height: 'auto',
             marginTop: '80px',
+            willChange: 'transform, opacity',
           }}
         />
       </div>
@@ -38,16 +39,19 @@ function SecondPhotoTransition(){
           <Box
               sx={{
                   position: 'absolute',
-                  left: isVisible ? '10%' : '-100px',
+                  left: 0,  
+                  transform: isVisible ? 'translateX(100px)' : 'translateX(-100px)', 
                   opacity: isVisible ? 1 : 0,
-                  transition: 'all 0.25s ease-in-out',
-                  width: '600px',
+                  transition: 'transform 0.25s ease-in-out, opacity 0.25s ease-in-out',
+                  width: '50%',
                   height: 'auto',
                   marginTop: '70px',
                   display: 'flex',
                   flexDirection: 'column',
                   textAlign: 'left',
-                  }}
+                  paddingLeft: '20px', 
+                  willChange: 'transform, opacity',
+              }}
           >
               <Typography
                   sx={{
@@ -56,21 +60,21 @@ function SecondPhotoTransition(){
                       lineHeight: '1.2',
                   }}
               >I'm a senior at</Typography>
-                          <Typography
+              <Typography
                   sx={{
                       fontSize: '50px',
                       fontWeight: 'bold',
                       lineHeight: '1.2',
                   }}
               >Utah State University</Typography>
-                          <Typography
+              <Typography
                   sx={{
                       fontSize: '40px',
                       fontWeight: 'bold',
                       lineHeight: '1.2',
                   }}
               >pursuing a degree in</Typography>
-                                       <Typography
+              <Typography
                   sx={{
                       fontSize: '56px',
                       fontWeight: 'bold',

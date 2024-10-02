@@ -11,14 +11,12 @@ import EntriesApp from '../assets/Entries/EntriesApp.png';
 import PowerPlayProfile from '../assets/PowerPlay/PowerPlayProfile.png';
 import PowerPlayWebProfile from '../assets/PowerPlay/PowerPlayWebProfile.png';
 import PowerPlayEdit from '../assets/PowerPlay/PowerPlayEdit.png';
-import TypingTest from '../assets/TypingTest.png';
 
 function Projects(){
     const urDoneSubHeader = <CardHeader title="UrDone" subheader="Social Media Application"/>
     const quizletSubHeader = <CardHeader title="Quizlet" subheader="Quizlet Replica" />
     const entriesSubHeader = <CardHeader title="Entries" subheader="Random Entries Winner" />
     const powerPlaySubHeader = <CardHeader title="PowerPlay" subheader="Hockey League Management System" />
-    const typingTestSubHeader = <CardHeader title="Typing Test" subheader="Virtual Keyboard Typing Test" />
     const urDoneContent = <CardContent>
     <Typography sx={{ marginBottom: 2 }}>Tech Stack:</Typography>
     <Typography sx={{ marginBottom: 2 }}>
@@ -180,16 +178,6 @@ sx={{
 
     return(
         <>
-            {/* <Box
-    sx={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100vw', 
-        height: 'fit-content',
-        background: 'linear-gradient(to right, #273db4 250px, #ed7845 0%, #c50900 50%, #f95ca4 100%)',
-    }}
-    > */}
         <div style={{marginTop: '100px', display: 'flex', justifyContent: 'space-evenly', flexFlow: 'wrap'}}>
             <div>
                 <ProjectCard 
@@ -228,17 +216,7 @@ sx={{
                 cardContent={powerPlayContent}
                 github="https://github.com/jak103/powerplay"/>
             </div>
-            {/* <div>
-                <ProjectCard
-                title="Typing Test"
-                description="An interactive typing test with a virtual keyboard."
-                mainSrc={TypingTest}
-                subheader={typingTestSubHeader}
-                github="https://github.com/Kelson-Gardner/TypingTest"/>
-                
-            </div> */}
             </div>
-            {/* </Box> */}
         </>
     )
 }

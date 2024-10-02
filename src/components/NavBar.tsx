@@ -31,9 +31,6 @@ const NavBar = () => {
         <div style={{width: '0px'}}></div>
         <div style={{width: '0px'}}></div>
     <div 
-    // style={{
-    //     marginLeft: '50%',
-    //     }}
         >
       <Link to={"/projects"} style={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px' }}>Projects</Link>
       <Link to={"/experience"} style={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px' }}>Experience</Link>

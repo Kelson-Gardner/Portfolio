@@ -17,7 +17,8 @@ function App(props: any) {
         width: '100vw', 
         height: 'fit-content',
         background: 'linear-gradient(to right, #273db4 250px, #ed7845 0%, #c50900 50%, #f95ca4 100%)',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
+        overflowY: 'hidden'
     }}
     >
     {pageContent}

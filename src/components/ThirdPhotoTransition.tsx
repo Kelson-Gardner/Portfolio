@@ -8,9 +8,8 @@ function ThirdPhotoTransition(){
     useEffect(() => {
       const handleScroll = () => {
         const topPosition = window.scrollY;
-        console.log(topPosition);
         setIsVisible(topPosition >= 350);
-      }
+      };
 
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
@@ -22,15 +21,18 @@ function ThirdPhotoTransition(){
         <Box
           component="img"
           src={Logo}
+          loading="eager"
           alt="Transitioning Image"
           sx={{
             position: 'absolute',
-            left: isVisible ? '100px' : '-100px',
+            left: 0, 
+            transform: isVisible ? 'translateX(100px)' : 'translateX(-100px)',
             opacity: isVisible ? 1 : 0,
-            transition: 'all 0.5s ease-in-out',
+            transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out',
             width: '400px',
             height: 'auto',
             marginTop: '100px',
+            willChange: 'transform, opacity',
           }}
         />
       </div>
@@ -38,16 +40,19 @@ function ThirdPhotoTransition(){
           <Box
               sx={{
                   position: 'absolute',
-                  right: isVisible ? '10%' : '-100px',
+                  right: 0, 
+                  transform: isVisible ? 'translateX(-100px)' : 'translateX(100px)',
                   opacity: isVisible ? 1 : 0,
-                  transition: 'all 0.25s ease-in-out',
-                  width: '600px',
+                  transition: 'transform 0.25s ease-in-out, opacity 0.25s ease-in-out',
+                  width: '50%',
                   height: 'auto',
                   marginTop: '80px',
                   display: 'flex',
                   flexDirection: 'column',
                   textAlign: 'left',
-                  }}
+                  paddingRight: '20px',
+                  willChange: 'transform, opacity',
+              }}
           >
               <Typography
                   sx={{
@@ -56,14 +61,14 @@ function ThirdPhotoTransition(){
                       lineHeight: '1.2',
                   }}
               >I currently work as a student</Typography>
-                          <Typography
+              <Typography
                   sx={{
                       fontSize: '53px',
                       fontWeight: 'bold',
                       lineHeight: '1.2',
                   }}
               >Software Test Engineer</Typography>
-                          <Typography
+              <Typography
                   sx={{
                       fontSize: '35px',
                       fontWeight: 'bold',
@@ -74,7 +79,6 @@ function ThirdPhotoTransition(){
       </div>
       </>
     );
-
 }
 
 export default ThirdPhotoTransition;
