@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import BasicTable from "../components/BasicTable";
 
 function Experience(){
@@ -6,17 +5,17 @@ function Experience(){
     return(
         <>
         <div style={{marginTop: '100px', display:'flex', justifyContent: 'flex-start'}}>
-            <Typography
-            sx={{
-                fontWeight: 'bold', 
-                fontSize: '50px',
-                marginLeft: '20%'
-            }}
-            >Languages.</Typography>
         </div>
-        <div style={{marginLeft: '20%'}}>
-            <BasicTable />
+        <div>
+            <BasicTable name="Languages." />
         </div>
+        <div>
+            <BasicTable name="Frameworks." />
+        </div>
+        <div>
+            <BasicTable name="Something else." />
+        </div>
+        <div style={{height: '500px'}}></div>
         </>
     )
 }
