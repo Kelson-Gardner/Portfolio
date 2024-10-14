@@ -42,6 +42,7 @@ function TopPhotoTransition(){
           src={ProfilePic}
           alt="Transitioning Image"
           loading="lazy"
+          decoding='async'
           onLoad={handleImageLoad}
           sx={{
             position: 'absolute',
@@ -67,7 +68,6 @@ function TopPhotoTransition(){
                   transform: isVisible ? 'translateX(-100px)' : 'translateX(100px)', 
                   opacity: isVisible ? 1 : 0,
                   transition: 'transform 0.25s ease-in-out, opacity 0.25s ease-in-out',
-                  // width: '600px',
                   width: '50%',
                   height: 'auto',
                   marginTop: '200px',

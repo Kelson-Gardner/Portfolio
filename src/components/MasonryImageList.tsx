@@ -39,7 +39,9 @@ export default function MasonryImageList() {
   const [open, setOpen] = useState(false);
 
   const handleImageLoad = () => {
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
   const handleClose = () => {
@@ -63,10 +65,11 @@ export default function MasonryImageList() {
               loading="lazy"
               onClick={handleOpen}
               onLoad={handleImageLoad}
+              decoding='async'
               style={{
                 backgroundImage: `url(${item.blur})`,
                 backgroundSize: 'cover',
-                animation: isLoading ? "flash .25s infinite" : "none",
+                animation: isLoading ? "flash .5s infinite" : "none",
                 cursor: 'pointer'
               }}
             />
