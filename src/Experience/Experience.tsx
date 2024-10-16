@@ -13,7 +13,7 @@ function Experience(){
             <BasicTable name="Frameworks." />
         </div>
         <div>
-            <BasicTable name="Something else." />
+            <BasicTable name="Softwares." />
         </div>
         <div style={{height: '500px'}}></div>
         </>
